@@ -47,3 +47,29 @@ function time_ago($datetime, $full = false)
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 };
+
+
+/**
+ * Count Approved Comments on a post
+ * @param int $id any post id
+ * @return int      number of comments
+ */
+
+function count_comments($id)
+{
+    //use the existing DB connection
+    global $DB;
+
+    $result = $DB->prepare('SELECT COUNT(*) AS total
+                    FROM comments
+                    WHERE post_id = ? AND is_approved = 1');
+    //run it and bind the data to the placeholders
+    $result->execute(array($id));
+    //check it
+    if ($result->rowCount()) {
+        //loop it
+        while ($row = $result->fetch()) {
+            return $row['total'];
+        }
+    }
+}
