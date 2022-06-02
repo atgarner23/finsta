@@ -26,10 +26,12 @@
 
 
     <?php //get up to 20 published posts, newest first
-    $result = $DB->prepare('SELECT *
-								FROM categories
-								ORDER BY RAND()
-								LIMIT 9');
+    $result = $DB->prepare('SELECT categories.*, COUNT(*) AS total
+                            FROM posts, categories
+                            WHERE posts.category_id = categories.category_id
+                            GROUP BY posts.category_id
+							ORDER BY RAND()
+							LIMIT 9');
     $result->execute();
     //check if any rows were found
     if ($result->rowCount() >= 1) {
@@ -42,9 +44,9 @@
             <ul>
                 <?php while ($row = $result->fetch()) {
                     //make variables from the array keys
-                    extract($row); ?>
-                    <li><?php echo $name ?></li>
-                <?php } ?>
+                    extract($row);
+                    echo "<li> $name ($total)</li>";
+                } ?>
             </ul>
 
         </section>
