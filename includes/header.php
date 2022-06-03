@@ -13,5 +13,5 @@
 <body>
     <div class="site">
         <header class="header">
-            <h1>Finsta</h1>
+            <h1><a href="index.php">Finsta</a></h1>
         </header>

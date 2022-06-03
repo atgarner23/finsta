@@ -22,7 +22,7 @@ require_once('includes/functions.php')
 			extract($row);
 	?>
 			<div class="post">
-				<img src="<?php echo $image ?>" alt="<?php echo $title ?>">
+				<a href="single.php?post_id=<?php echo $post_id; ?>"><img src="<?php echo $image ?>" alt="<?php echo $title ?>"></a>
 
 				<span class="author">
 					<img src="<?php echo $profile_pic; ?>" alt="<?php echo $username; ?>" width="50" height="50">
