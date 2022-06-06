@@ -98,3 +98,30 @@ function show_feedback(&$message, &$class, $list = array())
         </div>
 <?php }
 }
+
+/**
+ * Sanitize a string by stripping tags
+ * @param string $dirty the untrusted string
+ * @return string       the string with tags removed and trimmed
+ */
+function clean_string($dirty)
+{
+    return trim(strip_tags($dirty));
+}
+
+
+/**
+ * displays sql query information including the computed parameters.
+ * Silent unless DEBUG MODE is set to 1 in config.php
+ * @param [statement handler] $sth -  any PDO statement handler that needs troubleshooting
+ */
+function debug_statement($sth)
+{
+    if (DEBUG_MODE) {
+        echo '<pre>';
+        $info = debug_backtrace();
+        echo '<b>Debugger ran from ' . $info[0]['file'] . ' on line ' . $info[0]['line'] . '</b><br><br>';
+        $sth->debugDumpParams();
+        echo '</pre>';
+    }
+}
