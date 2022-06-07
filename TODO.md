@@ -1,9 +1,13 @@
 # TODO
 ======
 
-* make the register form
+* Add Login and parse
+* Add login aurthentication to certain features (commenting, new post etc)
+
 * make the login form
 * make the profile template
+* write the TOS
+* add a default profile pic
 
 # DONE
 ======
@@ -18,3 +22,5 @@
 * build the search results page
 * add pagination to "flip" through the results
 * make search and results
+* Add Register form and parse new user accounts
+* make the register form
