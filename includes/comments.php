@@ -20,8 +20,8 @@
     ?>
                 <div class="one-comment">
                     <div class="user">
-                        <img src="<?php echo $profile_pic; ?>" alt="<?php echo $username; ?>" width="50" height="50">
-                        <?php echo $username; ?>
+                        <?php show_profile_pic($profile_pic, $username);
+                        echo $username; ?>
                     </div>
 
                     <p><?php echo $body; ?></p>

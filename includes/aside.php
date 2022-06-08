@@ -16,7 +16,8 @@
                     //make variables from the array keys
                     extract($row); ?>
                     <li class="user">
-                        <img width="50" height="50" src="<?php echo $profile_pic ?>" alt="<?php echo $username ?>">
+                        <?php show_profile_pic($profile_pic, $username);
+                        echo $username; ?>
                     </li>
                 <?php } ?>
             </ul>

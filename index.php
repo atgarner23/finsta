@@ -1,7 +1,7 @@
 <?php
 require('CONFIG.php');
+require_once('includes/functions.php');
 require('includes/header.php');
-require_once('includes/functions.php')
 
 ?>
 
@@ -25,8 +25,8 @@ require_once('includes/functions.php')
 				<a href="single.php?post_id=<?php echo $post_id; ?>"><img src="<?php echo $image ?>" alt="<?php echo $title ?>"></a>
 
 				<span class="author">
-					<img src="<?php echo $profile_pic; ?>" alt="<?php echo $username; ?>" width="50" height="50">
-					<?php echo $username; ?>
+					<?php show_profile_pic($profile_pic, $username);
+					echo $username; ?>
 				</span>
 
 				<h2><?php echo $title ?></h2>
