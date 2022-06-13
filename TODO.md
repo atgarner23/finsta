@@ -1,6 +1,7 @@
 # TODO
 ======
 
+* make the edit post page
 * make the profile template
 * write the TOS
 
@@ -25,3 +26,4 @@
 * make comments work with the logged in person
 * add a default profile pic
 * Add login aurthentication to certain features (commenting, new post etc)
+* make the "new post" page and parser
