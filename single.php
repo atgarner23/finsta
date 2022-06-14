@@ -36,7 +36,7 @@ require('includes/parse-comment.php');
             extract($row);
     ?>
             <div class="post">
-                <img src="<?php echo $image ?>" alt="<?php echo $title ?>">
+                <?php show_post_image($image, 'large', $title); ?>
 
                 <span class="author">
                     <?php show_profile_pic($profile_pic, $username);

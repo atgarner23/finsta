@@ -22,7 +22,7 @@ require('includes/header.php');
 			extract($row);
 	?>
 			<div class="post">
-				<a href="single.php?post_id=<?php echo $post_id; ?>"><img src="<?php echo $image ?>" alt="<?php echo $title ?>"></a>
+				<a href="single.php?post_id=<?php echo $post_id; ?>"><?php show_post_image($image, 'large', $title); ?></a>
 
 				<span class="author">
 					<?php show_profile_pic($profile_pic, $username);

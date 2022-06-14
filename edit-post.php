@@ -12,6 +12,7 @@ if (!$logged_in_user) {
     <?php require('includes/parse-edit.php');
     ?>
     <h2>Edit Post</h2>
+    <?php show_post_image($image); ?>
     <?php show_feedback($feedback, $feedback_class, $errors);
     ?>
     <form action="edit-post.php?post_id=<?php echo $post_id; ?>" method="post">

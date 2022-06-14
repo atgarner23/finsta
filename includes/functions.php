@@ -269,3 +269,16 @@ function category_dropdown($default = 0)
         echo '</select>';
     }
 }
+
+/**
+ * Display any post's image at any known size
+ * @param string $unique the unique string identifier of the image. stred as "image" in the DB
+ * @param string $size small, medium (default) or large
+ * @param string $alt alt text
+ * @return mixed     Html <img> tag 
+ */
+function show_post_image($unique, $size = 'medium', $alt = '')
+{
+    $url = "uploads/$unique" . '_' . "$size.jpg";
+    echo "<img src='$url' alt='$alt' class='post-image is-$size'>";
+}
