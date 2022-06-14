@@ -38,6 +38,8 @@ require('includes/parse-comment.php');
             <div class="post">
                 <?php show_post_image($image, 'large', $title); ?>
 
+                <?php edit_post_button($post_id, $user_id); ?>
+
                 <span class="author">
                     <?php show_profile_pic($profile_pic, $username);
                     echo $username; ?>

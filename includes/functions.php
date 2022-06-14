@@ -282,3 +282,18 @@ function show_post_image($unique, $size = 'medium', $alt = '')
     $url = "uploads/$unique" . '_' . "$size.jpg";
     echo "<img src='$url' alt='$alt' class='post-image is-$size'>";
 }
+
+/**
+ * Adds a edit post button to posts for the user that is logged in
+ * @param $post_id  int the id of the post being editted
+ * @param $post_author int the user_id of the person who created the post
+ * @return     mixed HTML <a> tag
+ */
+function edit_post_button($post_id = 0, $post_author = 0)
+{
+    global $logged_in_user;
+    //if the logged in person is the author, show an edit button
+    if ($logged_in_user and $logged_in_user['user_id'] == $post_author) {
+        echo "<a href='edit-post.php?post_id=$post_id' class='button button-outline float-right'>Edit</a>";
+    }
+}

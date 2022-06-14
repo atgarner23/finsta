@@ -3,7 +3,8 @@
 
 
 * show a user their drafts
-* Add an "edit" button to only  the logged in user's posts
+
+* add a way to delete your own posts
 * make the profile template
 * write the TOS
 
@@ -31,3 +32,4 @@
 * make the "new post" page and parser
 * Build the "edit post" screen (step 2 of adding a new post)
 * display uploaded images throughout the site with a helper function
+* Add an "edit" button to only  the logged in user's posts

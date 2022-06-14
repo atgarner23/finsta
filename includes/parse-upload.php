@@ -1,8 +1,6 @@
 <?php
 //pre-define vars
 $errors = array();
-$feedback = '';
-$feedback_class = '';
 //if the user submitted the form
 if (isset($_POST['did_upload'])) {
     //upload configuration 
@@ -105,9 +103,9 @@ if (isset($_POST['did_upload'])) {
             ));
             //check to see if it worked
             if ($result->rowCount()) {
-                //go to step 2
-                $feedback = 'Success';
-                $feedback_class = 'success';
+                //what post just got added?
+                $post_id = $DB->lastInsertId();
+                header("Location:edit-post.php?post_id=$post_id");
             } else {
                 $feedback = 'Your post could not be saved.';
                 $feedback_class = 'error';

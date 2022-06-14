@@ -23,6 +23,7 @@ require('includes/header.php');
 	?>
 			<div class="post">
 				<a href="single.php?post_id=<?php echo $post_id; ?>"><?php show_post_image($image, 'large', $title); ?></a>
+				<?php edit_post_button($post_id, $user_id); ?>
 
 				<span class="author">
 					<?php show_profile_pic($profile_pic, $username);
