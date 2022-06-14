@@ -108,6 +108,24 @@ function clean_string($dirty)
 {
     return trim(strip_tags($dirty));
 }
+/**
+ * 
+ */
+function clean_int($dirty)
+{
+    return filter_var($dirty, FILTER_SANITIZE_NUMBER_INT);
+}
+/**
+ * 
+ */
+function clean_boolean($dirty)
+{
+    if ($dirty) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 
 /**
@@ -224,4 +242,30 @@ function show_profile_pic($src, $alt = 'Profile Picture', $size = '50')
     ?>
     <img width="<?php echo $size; ?>" height="<?php echo $size; ?>" src="<?php echo $src ?>" alt="<?php echo $alt ?>">
 <?php
+}
+
+/**
+ * Category Dropdown Display - displays an HTML dropdown input of all categories in alpha order
+ * @param 
+ * @return mixed HTML the <select> populated withe <option>s
+ */
+function category_dropdown($default = 0)
+{
+    global $DB;
+    $result = $DB->prepare('SELECT * FROM categories ORDER BY name ASC');
+    $result->execute();
+    if ($result->rowCount()) {
+        echo '<select name="category_id">';
+        echo '<option>Choose a Category</option>';
+        while ($row = $result->fetch()) {
+            extract($row);
+            if ($default == $category_id) {
+                $atts = 'selected';
+            } else {
+                $atts = '';
+            }
+            echo "<option value='$category_id' $atts>$name</option>";
+        }
+        echo '</select>';
+    }
 }

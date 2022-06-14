@@ -1,7 +1,8 @@
 # TODO
 ======
 
-* make the edit post page
+* display uploaded images throughout the site with a helper function
+* Add an "edit" button to only  the logged in user's posts
 * make the profile template
 * write the TOS
 
@@ -27,3 +28,4 @@
 * add a default profile pic
 * Add login aurthentication to certain features (commenting, new post etc)
 * make the "new post" page and parser
+* Build the "edit post" screen (step 2 of adding a new post)
