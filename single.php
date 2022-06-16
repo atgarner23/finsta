@@ -48,7 +48,7 @@ require('includes/parse-comment.php');
                 <h2><?php echo $title ?></h2>
                 <p><?php echo $body ?></p>
                 <span class="category"><?php echo $name; ?></span>
-
+                <span class="likes"><?php like_interface($post_id, $logged_in_user['user_id']); ?></span>
                 <span class="date"><?php echo time_ago($date); ?></span>
             </div>
     <?php
