@@ -1,15 +1,9 @@
 # TODO
 ======
-
-
 * make the likes not throw an error when not logged in
-
 * show a user their drafts
-
 * add a way to delete your own posts
-* make the profile template
 * write the TOS
-
 
 # DONE
 ======
@@ -38,3 +32,5 @@
 * add "likes" table and dummy data
 * display the number of likes on a post
 * make the "heart" interface
+* make the profile template
+* create follows interactions

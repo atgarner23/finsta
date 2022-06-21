@@ -25,7 +25,7 @@
 
                 <ul class="menu">
                     <?php if ($logged_in_user) { ?>
-                        <li class="user"><a href="">
+                        <li class="user"><a href="profile.php">
                                 <?php show_profile_pic($logged_in_user['profile_pic'], $logged_in_user['username'], 30);
                                 echo $logged_in_user['username']; ?></a></li>
                         <li><a href="new-post.php">New Post</a></li>

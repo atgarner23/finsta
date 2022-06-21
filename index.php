@@ -26,8 +26,10 @@ require('includes/header.php');
 				<?php edit_post_button($post_id, $user_id); ?>
 
 				<span class="author">
-					<?php show_profile_pic($profile_pic, $username);
-					echo $username; ?>
+					<a href="profile.php?user_id=<?php echo $user_id; ?>">
+						<?php show_profile_pic($profile_pic, $username);
+						echo $username; ?>
+					</a>
 				</span>
 
 				<h2><?php echo $title ?></h2>
