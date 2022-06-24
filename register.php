@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require('CONFIG.php');
 require_once('includes/functions.php');
 require('includes/parse-register.php');
 

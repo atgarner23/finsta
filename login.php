@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require('CONFIG.php');
 require_once('includes/functions.php');
 $logged_in_user = check_login();
 require('includes/parse-login.php');
